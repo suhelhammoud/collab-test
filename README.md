@@ -2,7 +2,7 @@
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_GITHUB_USERNAME/colab-package-test/blob/main/demo.ipynb)
 
-A standalone experiment: install a Python package directly from GitHub with uv into the notebook kernel's Python, then import `tiny_math.add`. No runtime dependencies, website, widgets, or CI.
+A standalone experiment: install a Python package directly from GitHub with uv into the notebook kernel's Python, then import `tiny_math.add`. No runtime dependencies or widgets. A GitHub Actions workflow publishes this README to GitHub Pages on pushes to `main`.
 
 After publishing, open the badge, connect a Colab runtime, and choose **Runtime → Run all**. Expect `5`, a passing assertion, and a `tiny_math/__init__.py` location in the runtime's installed packages. Run all again to check reruns. The notebook creates no virtual environment.
 
@@ -45,3 +45,11 @@ uv pip install --python /tmp/colab-package-test-check/bin/python "git+https://gi
 ```
 
 The notebook's explicit `--python sys.executable` follows [uv's interpreter targeting documentation](https://docs.astral.sh/uv/pip/environments/#using-arbitrary-python-environments).
+
+## GitHub Pages
+
+After creating the repository, open **Settings → Pages → Build and deployment** and select **GitHub Actions** as the source. Push to `main` or run **Deploy GitHub Pages** manually from the Actions tab. The workflow builds this README as the homepage and deploys it with the official GitHub Pages actions.
+
+The deployment URL appears in the workflow run and the `github-pages` environment, normally `https://YOUR_GITHUB_USERNAME.github.io/colab-package-test/`. Configure workflow failure notifications in your GitHub notification settings if desired.
+
+The workflow has been reviewed locally but has not run on GitHub; publishing still requires GitHub access.
