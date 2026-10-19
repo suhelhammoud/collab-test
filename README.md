@@ -1,6 +1,6 @@
 # colab-package-test
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_GITHUB_USERNAME/colab-package-test/blob/main/demo.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/suhelhammoud/colab-package-test/blob/main/demo.ipynb)
 
 A standalone experiment: install a Python package directly from GitHub with uv into the notebook kernel's Python, then import `tiny_math.add`. No runtime dependencies or widgets. A GitHub Actions workflow publishes this README to GitHub Pages on pushes to `main`.
 
