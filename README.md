@@ -22,7 +22,7 @@ import subprocess
 owner = subprocess.check_output(["gh", "api", "user", "--jq", ".login"], text=True).strip()
 for name in ("README.md", "demo.ipynb"):
     path = Path(name)
-    path.write_text(path.read_text().replace("YOUR_GITHUB_USERNAME", owner))
+    path.write_text(path.read_text().replace("suhelhammoud", owner))
 PYCODE
 git add README.md demo.ipynb
 git commit -m "Set GitHub account links"
@@ -40,7 +40,7 @@ To verify the published GitHub URL locally (substitute your username), use a dis
 ```sh
 cd /tmp
 uv venv colab-package-test-check
-uv pip install --python /tmp/colab-package-test-check/bin/python "git+https://github.com/YOUR_GITHUB_USERNAME/colab-package-test.git@9265cdd0dbb1d2af544685454b40bc1caedd74ff"
+uv pip install --python /tmp/colab-package-test-check/bin/python "git+https://github.com/suhelhammoud/colab-test.git@9265cdd0dbb1d2af544685454b40bc1caedd74ff"
 /tmp/colab-package-test-check/bin/python -I -c 'import tiny_math; from tiny_math import add; print(add(2, 3)); assert add(2, 3) == 5; print(tiny_math.__file__)'
 ```
 
@@ -50,6 +50,6 @@ The notebook's explicit `--python sys.executable` follows [uv's interpreter targ
 
 After creating the repository, open **Settings → Pages → Build and deployment** and select **GitHub Actions** as the source. Push to `main` or run **Deploy GitHub Pages** manually from the Actions tab. The workflow builds this README as the homepage and deploys it with the official GitHub Pages actions.
 
-The deployment URL appears in the workflow run and the `github-pages` environment, normally `https://YOUR_GITHUB_USERNAME.github.io/colab-package-test/`. Configure workflow failure notifications in your GitHub notification settings if desired.
+The deployment URL appears in the workflow run and the `github-pages` environment, normally `https://suhelhammoud.github.io/colab-package-test/`. Configure workflow failure notifications in your GitHub notification settings if desired.
 
 The workflow has been reviewed locally but has not run on GitHub; publishing still requires GitHub access.
