@@ -33,7 +33,7 @@ If that repository name already exists, stop and choose another name; do not pus
 
 ## Verification status
 
-Local verification uses a fresh environment and a commit-pinned local Git URL outside this checkout. This verifies package building, installation, and import isolation, but does not test GitHub fetching or Colab. An actual Colab run has not been performed.
+Local installation was attempted in a fresh environment under `/tmp`, outside this checkout, using the pinned local Git URL. Git resolved the correct commit, but installation could not finish: network/DNS access was unavailable, and the required setuptools build backend was not cached. The notebook bootstrap also could not download uv. Installation and import verification therefore remain incomplete. Notebook code syntax, JSON, and packaging TOML were checked locally. GitHub fetching and an actual Colab run have not been tested.
 
 To verify the published GitHub URL locally (substitute your username), use a disposable environment outside the checkout:
 
